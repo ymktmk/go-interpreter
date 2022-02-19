@@ -1,14 +1,17 @@
 package lexer
 
 import (
-	"testing"
 	"go-interpreter/token"
+	"testing"
 )
 
 func TestNextToken(t *testing.T) {
-	input := `=+(){},;`
 
+	input := `=+(){},;`
+	
+	// 配列に格納
 	tests := []struct {
+		// 定義した型
 		expectedType token.TokenType
 		expectedLiteral string
 	}{
@@ -23,20 +26,22 @@ func TestNextToken(t *testing.T) {
 		{token.EOF, ""},
 	}
 
+	// `=+(){},;`を入力して
 	l := New(input)
 
 	for i, tt := range tests {
+		// 構造体の関数
+		// Lexer
 		tok := l.NextToken()
 
 		if tok.Type != tt.expectedType {
-			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q",i,tt.expectedType, tok.Type)
+			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q", i, tt.expectedType, tok.Type)
 		}
 
 		if tok.Literal != tt.expectedLiteral {
-			t.Fatalf("tests[%d] - literal wrong. expected=%q, got=%q", i,tt.expectedLiteral, tok.Literal)
+			t.Fatalf("tests[%d] - literal wrong. expected=%q, got=%q", i, tt.expectedLiteral, tok.Literal)
 		}
 	}
-
 }
 
 

@@ -11,16 +11,22 @@ type Lexer struct {
 	ch byte
 }
 
+// ここのアルゴリズム
 func New(input string) *Lexer {
 	l := &Lexer{input: input}
+	// fmt.Printf("変数lのアドレス :%p\n", l)
 	l.readChar()
 	return l
 }
 
+// ここのアルゴリズム
 func (l *Lexer) readChar() {
+	// デフォルト readPosition = readPosition = 0
 	if l.readPosition >= len(l.input) {
+		// 入力値より大きくなったら0に戻す
 		l.ch = 0
 	} else {
+		// よくわからん
 		l.ch = l.input[l.readPosition]
 	}
 	l.position = l.readPosition
@@ -38,7 +44,7 @@ func (l *Lexer) NextToken() token.Token {
 		case '(':
 			tok = newToken(token.LPAREN, l.ch)
 		case ')':
-			tok = newToken(token.RBRACE, l.ch)
+			tok = newToken(token.RPAREN, l.ch)
 		case ',':
 			tok = newToken(token.COMMA, l.ch)
 		case '+':
