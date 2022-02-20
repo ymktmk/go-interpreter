@@ -14,26 +14,26 @@ package main
 // }
 
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
-type Person struct {
-	firstName string 
-	age int
-}
+// type Person struct {
+// 	firstName string 
+// 	age int
+// }
 
-func main() {
-	// フィールドにセットする
-	var mike Person
-	mike.firstName = "Mike"
-	mike.age = 20
-	fmt.Println(mike.firstName, mike.age)
+// func main() {
+// 	// フィールドにセットする
+// 	var mike Person
+// 	mike.firstName = "Mike"
+// 	mike.age = 20
+// 	fmt.Println(mike.firstName, mike.age)
 
-	bob := Person{"Bob", 30}
-	fmt.Println(bob.firstName, bob.age)
+// 	bob := Person{"Bob", 30}
+// 	fmt.Println(bob.firstName, bob.age)
 
-	sam := Person{age: 15, firstName: "Sam"}
-	fmt.Println(sam.firstName, sam.age)
+// 	sam := Person{age: 15, firstName: "Sam"}
+// 	fmt.Println(sam.firstName, sam.age)
 	
-} 
+// } 

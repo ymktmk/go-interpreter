@@ -1,3 +1,5 @@
+// Tokenのデータ構造を定義する
+
 package token
 
 type TokenType string
@@ -10,7 +12,7 @@ type Token struct {
 const (
 	ILLEGAL = "ILLEGAL"
 	EOF = "EOF"
-
+	
 	INDENT = "INDENT"
 	INT = "INT"
 
